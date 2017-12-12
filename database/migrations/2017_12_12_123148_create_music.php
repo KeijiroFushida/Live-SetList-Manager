@@ -15,7 +15,7 @@ class CreateMusic extends Migration
     {
         Schema::create('events',function(Blueprint $table) {
             $table->increments('id');
-            $table->unsigned_integer('artist_id');
+            $table->unsignedInteger('artist_id');
             $table->foreign('artist_id')->reference('id')->on('artists');
             $table->integer('live_id');
             $table->string('music_name');

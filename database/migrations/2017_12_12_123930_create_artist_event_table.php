@@ -15,7 +15,7 @@ class CreateArtistEventTable extends Migration
     {
         Schema::create('artist_event', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsigned_integer('artist_id');
+            $table->unsignedInteger('artist_id');
             $table->foreign('artist_id')->reference('id')->on('artists');
             $table->unsigned_integer('event_id');
             $table->foreign('event_id')->reference('id')->on('events');
