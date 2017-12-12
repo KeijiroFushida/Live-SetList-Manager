@@ -18,7 +18,7 @@ class CreatEvents extends Migration
         	$table->string('event_name');
         	$table->string('event_place');
         	$table->dateTime('event_date');
-        	$table->timestamp();
+        	$table->timestamps();
         });
     }
 

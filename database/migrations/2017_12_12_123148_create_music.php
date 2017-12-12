@@ -20,7 +20,7 @@ class CreateMusic extends Migration
             $table->integer('live_id');
             $table->string('music_name');
             $table->integer('set_list');
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 
