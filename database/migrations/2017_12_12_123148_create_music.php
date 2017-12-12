@@ -13,7 +13,7 @@ class CreateMusic extends Migration
      */
     public function up()
     {
-        Schema::create('events',function(Blueprint $table)) {
+        Schema::create('events',function(Blueprint $table) {
             $table->increments('id');
             $table->unsigned_integer('artist_id');
             $table->foreign('artist_id')->reference('id')->on('artists');
