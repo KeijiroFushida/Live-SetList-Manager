@@ -13,7 +13,7 @@ class CreateMusic extends Migration
      */
     public function up()
     {
-        Schema::create('events',function(Blueprint $table) {
+        Schema::create('music',function(Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('artist_id');
             $table->foreign('artist_id')->reference('id')->on('artists');
@@ -31,6 +31,6 @@ class CreateMusic extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('music');
     }
 }
