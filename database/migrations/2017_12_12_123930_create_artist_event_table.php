@@ -17,7 +17,7 @@ class CreateArtistEventTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('artist_id');
             $table->foreign('artist_id')->reference('id')->on('artists');
-            $table->unsigned_integer('event_id');
+            $table->unsignedInteger('event_id');
             $table->foreign('event_id')->reference('id')->on('events');
         });
     }
