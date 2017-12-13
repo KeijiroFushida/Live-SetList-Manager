@@ -19,8 +19,8 @@ class CreateArtistEventTable extends Migration
             $table->unsignedInteger('artist_id');
 
             $table->unique(['event_id', 'artist_id']);
-            $table->foreign('event_id')->reference('id')->on('events')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('artist_id')->reference('id')->on('artists')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('restrict')->onUpdate('cascade');
         });
     }
 

@@ -22,7 +22,7 @@ class CreateMusicTable extends Migration
             $table->timestamps();
 
             $table->unique(['live_id', 'order']);
-            $table->foreign('artist_id')->reference('id')->on('artists')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('restrict')->onUpdate('cascade');
         });
     }
 
