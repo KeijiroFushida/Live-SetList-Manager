@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home','EventController@index');
+
+Route::prefix('artist')->group(function() {
+    Route::get('/', 'ArtistController@list');
+    Route::post('save/{id?}', 'ArtistController@save');
+});
