@@ -19,7 +19,7 @@
         @foreach ($artists as $artist)
             <div class="list-group-item container-fluid">
                 <div class="col-sm-10"><a href="#">{{ $artist->artist_name }}</a></div>
-                <button type="button" class="btn btn-primary btn-edit-artist col-sm-2" data-toggle="modal" data-target="#artist-modal" data-id="{{ $artist->id }}" data-name="{{ $artist->artist_name }}">編集</button>
+                <button type="button" class="btn btn-primary btn-edit-artist col-sm-2" data-toggle="modal" data-target="#artist-modal" data-artist="{{ $artist }}">編集</button>
             </div>
         @endforeach
     </div>
@@ -54,12 +54,13 @@
 <script type="text/javascript">
 $('#artist-modal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) //モーダルを呼び出すときに使われたボタンを取得
-    var artist_id = button.data('id') //data-whatever の値を取得
-    var artist_name = button.data('name') //data-whatever の値を取得
     var modal = $(this)  //モーダルを取得
-    modal.find('.modal-body input#artist-name').val(artist_name) //inputタグにも表示
-    modal.find('form').attr('action', '/artist/save/'+artist_id)
-});
+    var artist_data = button.data('artist')
+    if (artist_data) {
+        modal.find('.modal-body input#artist-name').val(artist_data.artist_name) //inputタグにも表示
+        modal.find('form').attr('action', '/artist/save/'+artist_data.id)
+    }
+})
 </script>
 
 @endsection
