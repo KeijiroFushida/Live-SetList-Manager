@@ -8,11 +8,6 @@
     <title>Live Setlist Manager</title>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <script>
-        window.Laravel = {
-            csrfToken: "{{ csrf_token() }}"
-        };
-    </script>
     <script src="{{ mix('js/app.js') }}"></script>
 </head>
 <body>
