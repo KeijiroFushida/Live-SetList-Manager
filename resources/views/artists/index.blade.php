@@ -53,7 +53,6 @@
 
 <script type="text/javascript">
 $('#artist-modal').on('show.bs.modal', function (event) {
-    console.log();
     var button = $(event.relatedTarget) //モーダルを呼び出すときに使われたボタンを取得
     var artist_id = button.data('id') //data-whatever の値を取得
     var artist_name = button.data('name') //data-whatever の値を取得
