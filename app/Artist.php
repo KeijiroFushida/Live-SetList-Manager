@@ -12,8 +12,12 @@ class Artists extends Model
 	];
 
     public function musics() {
-    	return $this->hasMany('App\Musics');
-    }
+    	return $this->hasMany('App\Music');
+	}
+	
+	public function events() {
+		return $this->belongsToMany('App\Event');
+	}
 
     public function artist_event() {
     	return $this->belongsTo('App\Artist_Event');

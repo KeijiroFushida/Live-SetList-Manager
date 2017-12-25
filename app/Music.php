@@ -15,7 +15,7 @@ class Musics extends Model
     public function event() {
     	return $this->belongsTo('App\Event');
     }
-    public function artists() {
-    	return $this->belongsTo('App\Artists');
+    public function artist() {
+    	return $this->belongsTo('App\Artist');
     }
 }

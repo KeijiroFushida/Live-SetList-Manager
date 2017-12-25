@@ -16,6 +16,6 @@ class Artist_Event extends Model
     }
 
     public function artists() {
-    	return $this->hasMany('App\Artists');
+    	return $this->hasMany('App\Artist');
     }
 }
