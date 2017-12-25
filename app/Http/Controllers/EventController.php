@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Events;
+use App\Event;
 
 class EventController extends Controller
 {
@@ -33,7 +33,7 @@ class EventController extends Controller
 		if (isset($this->filters)) {
 			$event_data = $this->retrieval($this->filters);
 		} else {
-			$event_data = Events::select()
+			$event_data = Event::select()
 				->join('artist_event','events.id','=','artist_event.event_id')
 				->join('artists','artist_event.artist_id','=','artists.id')
 				->get();
@@ -43,12 +43,12 @@ class EventController extends Controller
 
 	public function getEventDetail($event_id)
 	{
-		$event = Events::findOrFail($event_id);
+		$event = Event::findOrFail($event_id);
 		return view('events.detail', ['event' => $event]);
 	}
 
 	public function retrieval($filters) {
-		$query = Events::select();
+		$query = Event::select();
 		// イベント名
 		if (isset($filters['eventName'])) {
 			$query->where('events.event_name',$filters['eventName']);
